@@ -1,0 +1,170 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MainApp"
+        xmlns:View="clr-namespace:MainApp.Mains.View" x:Class="MainApp.MainWindow"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="Transparent" WindowStyle="None"
+        Title="LoginPage" Height="550" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Visibility="Visible" x:Name="SignInpage">
+            <Border CornerRadius="10 0 0 10">
+
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#3AA9AD" Offset="0"/>
+                        <GradientStop Color="#3AADA1" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Canvas>
+                    <Polygon Points="0,20 230,140 0,270" Fill="#4EB1B6"/>
+                    <Polygon Points="100,400 200,370 180,470" Fill="#4EB1B6"/>
+                    <Ellipse Margin="50 400 0 0" Width="20" Height="20" Fill="#4EB1B6"/>
+                    <Ellipse Margin="250 450 0 0" Width="20" Height="20" Fill="#4EB1B6"/>
+                </Canvas>
+            </Border>
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="Sign In" Style="{StaticResource Title}"/>
+                <TextBlock Text="enter your username and password" Style="{StaticResource normaltext}" Opacity="0.7" Margin="20 30"/>
+                <Button Content="Sign Up" Style="{StaticResource Button}" x:Name="SignUpButton" Click="SignUpButton_Click">
+                    <Button.ToolTip>
+                        <ToolTip Style="{StaticResource RoundedTooltip}">
+                            <TextBlock Foreground="Cyan"><Run Text="Are you SING UP Accunt?"/></TextBlock>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid Visibility="Collapsed" x:Name="SignUppage">
+            <Border CornerRadius="10 0 0 10">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#3AA9AD" Offset="0"/>
+                        <GradientStop Color="#3AADA1" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Canvas>
+                    <Polygon Points="0,20 230,140 0,270" Fill="#4EB1B6"/>
+                    <Polygon Points="100,400 200,370 180,470" Fill="#4EB1B6"/>
+                    <Ellipse Margin="50 400 0 0" Width="20" Height="20" Fill="#4EB1B6"/>
+                    <Ellipse Margin="250 450 0 0" Width="20" Height="20" Fill="#4EB1B6"/>
+                </Canvas>
+            </Border>
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="Sign Up" Style="{StaticResource Title}"/>
+                <TextBlock Text="enter your personal info and create new account to connect use" Style="{StaticResource normaltext}" Opacity="0.7" Margin="20 30"/>
+                <Button Content="Sign in" Style="{StaticResource Button}" x:Name="SigninButton" Click="SigninButton_Click"/>
+            </StackPanel>
+        </Grid>
+        <Border Background="#ffff" Grid.Column="1" CornerRadius="0 10 10 0" MouseDown="Border_MouseDown" x:Name="MainSignIpPage" Visibility="Visible">
+            <StackPanel VerticalAlignment="Center">
+                <Image x:Name="imageclose" Source="images/closeicons.png" MouseDown="imageclose_MouseDown" Style="{StaticResource imageclose}"/>
+                <TextBlock Style="{StaticResource Title}" Text="Sign in" Foreground="#4EB1B6"/>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 20">
+                    <Button Style="{StaticResource ButtonCircule}" Width="224">
+                        <Image Source="images/logo.jpg" />
+                    </Button>
+                </StackPanel>
+                <TextBlock Text="Please enter your email and password" Style="{StaticResource normaltext}" Foreground="#878787" Opacity="0.7" Margin="0 10 0 15"/>
+                <Border BorderThickness="1" BorderBrush="#acb0af" CornerRadius="5" Margin="70 7" x:Name="mainborderemail">
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="images/emailcons.png" Width="40"/>
+                        <TextBlock x:Name="LableEmail" Text="Email:" Style="{StaticResource textlable}" MouseDown="LableEmail_MouseDown"
+                        VerticalAlignment="Center" Margin="5,0,239,0" Grid.Column="1" Height="20" RenderTransformOrigin="0.015,0.523"/>
+                        <TextBox Text="mohammad" x:Name="txtemail" Style="{StaticResource txtvalue}" TextChanged="txtemail_TextChanged" Grid.Column="1" Padding="5,8,0,0" Height="40" Margin="45,0,0,0"/>
+                    </Grid>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="#acb0af" CornerRadius="5" Margin="70 7" x:Name="mainpassborder">
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="images/passicons.png" Width="40"/>
+                        <TextBlock x:Name="LablePassword" Text="Password:" Style="{StaticResource textlable}" MouseDown="LablePassword_MouseDown"
+                         VerticalAlignment="Center" Grid.Column="1" Margin="5,0,218,0"/>
+                        <PasswordBox Password="123456" x:Name="txtPassword" Style="{StaticResource txtvalue}" PasswordChanged="txtPassword_PasswordChanged" Grid.Column="1" Padding="10,9,0,0" Margin="71,0,0,0" Height="40"/>
+                    </Grid>
+                </Border>
+                <Button Content="Sing IN" x:Name="btnSignin" Click="btnSignin_Click" Style="{StaticResource MainButton}" Margin="0,10,0,10">
+                    <Button.ToolTip>
+                        <ToolTip Style="{StaticResource RoundedTooltip}">
+                            <TextBlock Foreground="Cyan"><Run Text="Are you sure to login?"/></TextBlock>
+                        </ToolTip>
+                    </Button.ToolTip>
+
+                </Button>
+            </StackPanel>
+        </Border>
+        <Border Background="#ffff" Grid.Column="1" CornerRadius="0 10 10 0" MouseDown="Border_MouseDown" x:Name="MainSignUppage" Visibility="Collapsed">
+            <StackPanel>
+                <Image x:Name="colseSignUp" Source="images/closeicons.png" MouseDown="imagecloseSignUp_MouseDown" Style="{StaticResource imageclose}"/>
+                <TextBlock Style="{StaticResource Title}" Text="Sign Up" Foreground="#4EB1B6" Margin="0 -30" Width="357"/>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 10">
+                    <Button Style="{StaticResource ButtonCircule}" Width="224">
+                        <Image Source="images/logo.jpg" />
+                    </Button>
+                </StackPanel>
+                <TextBlock Text="Please enter your info" Style="{StaticResource normaltext}" Foreground="#878787" Opacity="0.7" Margin="0 -10,0,10"/>
+                <Border BorderThickness="1" BorderBrush="#acb0af" CornerRadius="5" Margin="70 7" x:Name="EmailSignupBorder">
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="images/emailcons.png" Width="40"/>
+                        <TextBlock x:Name="LableEmailSignUp" Text="Email:" Style="{StaticResource textlable}" MouseDown="LableEmailSignUp_MouseDown"
+                VerticalAlignment="Center" Margin="5,0,239,0" Grid.Column="1" Height="20" RenderTransformOrigin="0.015,0.523"/>
+                        <TextBox x:Name="txtemailSignUp" Style="{StaticResource txtvalue}" TextChanged="txtemailSignUp_TextChanged" Grid.Column="1" Margin="45,0,0,0" Height="40"/>
+                    </Grid>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="#acb0af" CornerRadius="5" Margin="70 7" x:Name="UserSignUpBorder">
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="284"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="images/emailcons.png" Width="40"/>
+                        <TextBlock x:Name="LableUsernameSignUp" Text="User:" Style="{StaticResource textlable}" MouseDown="LableUsernameSignUp_MouseDown"
+                        VerticalAlignment="Center" Margin="5,0,239,0" Grid.Column="1" Height="20" RenderTransformOrigin="0.015,0.523"/>
+                        <TextBox x:Name="txtUsernameSignUp" Style="{StaticResource txtvalue}" TextChanged="txtUsernameSignUp_TextChanged" Grid.Column="1" Margin="45,0,0,0" Height="40"/>
+                    </Grid>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="#acb0af" CornerRadius="5" Margin="70 7" x:Name="PasswordSignUpborder">
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="images/passicons.png" Width="40"/>
+                        <TextBlock x:Name="LablePasswordSignUp" Text="Password:" Style="{StaticResource textlable}" MouseDown="LablePasswordSignUp_MouseDown"
+                        VerticalAlignment="Center" Grid.Column="1" Margin="5,0,218,0"/>
+                        <PasswordBox x:Name="txtPasswordSignUp" Style="{StaticResource txtvalue}" PasswordChanged="txtPasswordSignUp_PasswordChanged" Grid.Column="1" Margin="71,0,0,0" Height="40"/>
+                    </Grid>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="#acb0af" CornerRadius="5" Margin="70 7" x:Name="CurrectPasswordBorder">
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="images/passicons.png" Width="40"/>
+                        <TextBlock x:Name="LablecurrectPasswordSignUp" Text="Currect Pass:" Style="{StaticResource textlable}" MouseDown="LablecurrectPasswordSignUp_MouseDown"
+                        VerticalAlignment="Center" Grid.Column="1" Margin="5,0,203,0"/>
+                        <PasswordBox x:Name="txtcurrectPasswordSignUp" Style="{StaticResource txtvalue}" PasswordChanged="txtcurrectPasswordSignUp_PasswordChanged" Grid.Column="1" Margin="83,0,0,0" Height="40"/>
+                    </Grid>
+                </Border>
+                <Button Content="SIGN Up" Click="btnSungUp_Click" Style="{StaticResource MainButtonSignUp}" x:Name="btnSungUp" Margin="0,10,0,10"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

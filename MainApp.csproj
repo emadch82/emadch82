@@ -1,0 +1,107 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="NewFolder1\**" />
+    <EmbeddedResource Remove="NewFolder1\**" />
+    <None Remove="NewFolder1\**" />
+    <Page Remove="NewFolder1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="images\ArmsEMAD2.png" />
+    <None Remove="images\ArmsEMAD3.png" />
+    <None Remove="images\backpack.png" />
+    <None Remove="images\bckimg.png" />
+    <None Remove="images\bordars.png" />
+    <None Remove="images\closeicons.png" />
+    <None Remove="images\emailcons.png" />
+    <None Remove="images\emailico.png" />
+    <None Remove="images\emailicon.png" />
+    <None Remove="images\emapic.png" />
+    <None Remove="images\imaq.png" />
+    <None Remove="images\imas.png" />
+    <None Remove="images\infos.png" />
+    <None Remove="images\logo.jpg" />
+    <None Remove="images\MainScreenss.png" />
+    <None Remove="images\Menus.svg" />
+    <None Remove="images\passicons.png" />
+    <None Remove="Mains\Images\customer_page.png" />
+    <None Remove="Mains\Images\home_page.png" />
+    <None Remove="Mains\Images\img_customer.png" />
+    <None Remove="Mains\Images\img_home.png" />
+    <None Remove="Mains\Images\img_order.png" />
+    <None Remove="Mains\Images\img_product.png" />
+    <None Remove="Mains\Images\img_setting.png" />
+    <None Remove="Mains\Images\img_shipment.png" />
+    <None Remove="Mains\Images\img_transaction.png" />
+    <None Remove="Mains\Images\order_page.png" />
+    <None Remove="Mains\Images\product_page.png" />
+    <None Remove="Mains\Images\setting_page.png" />
+    <None Remove="Mains\Images\shipment_page.png" />
+    <None Remove="Mains\Images\shutdown_def.png" />
+    <None Remove="Mains\Images\shutdown_mo.png" />
+    <None Remove="Mains\Images\transaction_page.png" />
+    <None Remove="Mains\View\processingimage\cxrfawjp.i5r~" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Emgu.CV" Version="4.9.0.5494" />
+    <PackageReference Include="Emgu.CV.Bitmap" Version="4.9.0.5494" />
+    <PackageReference Include="Emgu.CV.runtime.windows" Version="4.9.0.5494" />
+    <PackageReference Include="Microsoft.OData.Client" Version="8.0.1" />
+    <PackageReference Include="OpenCvSharp4" Version="4.10.0.20240616" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.10.0.20240616" />
+    <PackageReference Include="OpenCvSharp4.Windows" Version="4.10.0.20240616" />
+    <PackageReference Include="OxyPlot.Wpf" Version="2.1.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <PackageReference Include="System.Diagnostics.Process" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Backend\Backend.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\ArmsEMAD2.png" />
+    <Resource Include="images\ArmsEMAD3.png" />
+    <Resource Include="images\backpack.png" />
+    <Resource Include="images\bckimg.png" />
+    <Resource Include="images\bordars.png" />
+    <Resource Include="images\closeicons.png" />
+    <Resource Include="images\emailcons.png" />
+    <Resource Include="images\emailico.png" />
+    <Resource Include="images\emapic.png" />
+    <Resource Include="images\imaq.png" />
+    <Resource Include="images\infos.png" />
+    <Resource Include="images\logo.jpg" />
+    <Resource Include="images\MainScreenss.png" />
+    <Resource Include="images\Menus.svg" />
+    <Resource Include="images\passicons.png" />
+    <Resource Include="Mains\Images\customer_page.png" />
+    <Resource Include="Mains\Images\home_page.png" />
+    <Resource Include="Mains\Images\img_customer.png" />
+    <Resource Include="Mains\Images\img_home.png" />
+    <Resource Include="Mains\Images\img_order.png" />
+    <Resource Include="Mains\Images\img_product.png" />
+    <Resource Include="Mains\Images\img_setting.png" />
+    <Resource Include="Mains\Images\img_shipment.png" />
+    <Resource Include="Mains\Images\img_transaction.png" />
+    <Resource Include="Mains\Images\order_page.png" />
+    <Resource Include="Mains\Images\product_page.png" />
+    <Resource Include="Mains\Images\setting_page.png" />
+    <Resource Include="Mains\Images\shipment_page.png" />
+    <Resource Include="Mains\Images\shutdown_def.png" />
+    <Resource Include="Mains\Images\shutdown_mo.png" />
+    <Resource Include="Mains\Images\transaction_page.png" />
+  </ItemGroup>
+
+</Project>
